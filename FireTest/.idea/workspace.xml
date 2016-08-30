@@ -58,8 +58,8 @@
       <file leaf-file-name="activity_testing_page.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_testing_page.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.1492538">
-              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+            <state vertical-scroll-proportion="-5.238806">
+              <caret line="29" column="42" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="42" />
               <folding>
                 <element signature="e#272#305#0" expanded="true" />
                 <element signature="e#330#365#0" expanded="true" />
@@ -76,8 +76,8 @@
       <file leaf-file-name="TestingPage.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/TestingPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5592011">
-              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.40085593">
+              <caret line="121" column="56" selection-start-line="121" selection-start-column="56" selection-end-line="121" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -2412,8 +2412,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_testing_page.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.1492538">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        <state vertical-scroll-proportion="-5.238806">
+          <caret line="29" column="42" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="42" />
           <folding>
             <element signature="e#272#305#0" expanded="true" />
             <element signature="e#330#365#0" expanded="true" />
@@ -2428,8 +2428,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/TestingPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5592011">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.40085593">
+          <caret line="121" column="56" selection-start-line="121" selection-start-column="56" selection-end-line="121" selection-end-column="56" />
           <folding />
         </state>
       </provider>

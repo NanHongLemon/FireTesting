@@ -124,5 +124,21 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="下一題"
+                android:id="@+id/NextTopic"
+                android:layout_gravity="center_horizontal"
+                android:onClick="onClick"
+                android:clickable="true"/>
+        </LinearLayout>
+
     </LinearLayout>
 </RelativeLayout>
