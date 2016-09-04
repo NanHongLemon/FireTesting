@@ -1,9 +1,17 @@
 package com.example.lemon.firetesting;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Color;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DialogTitle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import junit.framework.Test;
@@ -17,12 +25,14 @@ public class TestingPage extends AppCompatActivity {
 
     private ArrayList Ans = new ArrayList();
     private HashMap Exam = new HashMap();
+    private ArrayList TopicArray = new ArrayList();
     private Button button0;
     private Button button1;
     private Button button2;
     private Button button3;
-    private TextView TestTopic;
-    private TextView NextPopic;
+    private TextView NextTopic;
+    private int Next = 0;
+    private int MaxSize = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,51 +76,56 @@ public class TestingPage extends AppCompatActivity {
         Exam.put("火災現場無法逃生時，應選擇正確避難房間，下列房間何者正確?", ans4);
         Exam.put("準備晚餐油炸食物時，油炸油突然達燃點起火，請問第一時間該如何滅火?", ans5);
 
-        ArrayList TopicArray = new ArrayList();
         for (Object key : Exam.keySet()) {
             TopicArray.add(key.toString());
+            MaxSize++;
         }
-
+        HideInformation();
         ShowNextData(Exam, TopicArray, 0);
 
         button0 = (Button) findViewById(R.id.button0);
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
         button3 = (Button) findViewById(R.id.button3);
-        TestTopic = (TextView) findViewById(R.id.TestTopic);
+        NextTopic = (TextView) findViewById(R.id.NextTopic);
 
         button0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                MatchAnswer(Exam, TopicArray, Next, view);
             }
         });
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                MatchAnswer(Exam, TopicArray, Next, view);
             }
         });
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                MatchAnswer(Exam, TopicArray, Next, view);
             }
         });
 
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                MatchAnswer(Exam, TopicArray, Next, view);
             }
         });
 
-        TestTopic.setOnClickListener(new View.OnClickListener() {
+        NextTopic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if (Next + 1 == MaxSize) {
+                    ShowEndAlertDialog();
+                } else {
+                    Next++;
+                    nextTopic(Exam, TopicArray, Next);
+                }
             }
         });
 
@@ -119,21 +134,49 @@ public class TestingPage extends AppCompatActivity {
     public void MatchAnswer(HashMap exam, ArrayList topicArray, int n, View view) {
         int id = view.getId();
         Button PushButton = (Button) findViewById(id);
-        String userAns = PushButton.getText().toString();
         String topicKey = topicArray.get(n).toString();
-        testTopic.setText(topicKey);
         ArrayList Answers = (ArrayList) exam.get(topicKey);
-        for (int i = 0; i < Answers.size()-1; i++) {
-            if ()
+        String CorrectAns = Answers.get(Answers.size()-1).toString();
+        boolean correct = false;
+        if (CorrectAns.equals(PushButton.getText().toString())) {
+            correct = true;
         }
+        for (int i = 0; i < Answers.size()-1; i++) {
+            int btnID = getResources().getIdentifier("button"+i, "id", getPackageName());
+            Button button = (Button) findViewById(btnID);
+            if (Answers.get(i).equals(CorrectAns)) {
+                button.setTextColor(Color.GREEN);
+            } else {
+                button.setTextColor(Color.RED);
+            }
+        }
+
+        AlertDialog.Builder MyAlertDialog = new AlertDialog.Builder(this);
+        ImageView image = new ImageView(this);
+        if(correct) {
+            image.setImageResource(R.drawable.cycle);
+        } else {
+            image.setImageResource(R.drawable.cross);
+        }
+        MyAlertDialog.setView(image);
+        MyAlertDialog.show();
     }
 
     public void HideInformation() {
-
+        for (int i = 0; i < 4; i++) {
+            int btnID = getResources().getIdentifier("button"+i, "id", getPackageName());
+            Button button = (Button) findViewById(btnID);
+            button.setVisibility(View.GONE);
+            button.setTextColor(Color.BLACK);
+        }
     }
 
-    public void OpenInformation() {
-
+    public void OpenInformation(int n) {
+        for (int i = 0; i < n; i++) {
+            int btnID = getResources().getIdentifier("button"+i, "id", getPackageName());
+            Button button = (Button) findViewById(btnID);
+            button.setVisibility(View.VISIBLE);
+        }
     }
 
     public void ShowNextData(HashMap exam, ArrayList topicArray, int n) {
@@ -146,9 +189,27 @@ public class TestingPage extends AppCompatActivity {
             Button button = (Button) findViewById(btnID);
             button.setText(Answers.get(i).toString());
         }
+        OpenInformation(Answers.size()-1);
     }
 
-    public void nextTopic() {
+    public void nextTopic(HashMap exam, ArrayList topicArray, int n) {
+        HideInformation();
+        ShowNextData(exam, topicArray, n);
+    }
+
+    public void ShowEndAlertDialog() {
+        AlertDialog.Builder EndAlertDialog = new AlertDialog.Builder(this);
+        EndAlertDialog.setTitle("已完成測驗");
+        DialogInterface.OnClickListener oKClick = new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent();
+                intent.setClass(TestingPage.this, MainFirePage.class);
+                startActivity(intent);
+            }
+        };
+        EndAlertDialog.setNegativeButton("結束", oKClick);
+        EndAlertDialog.show();
+
 
     }
 }
