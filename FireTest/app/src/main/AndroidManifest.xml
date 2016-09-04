@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TestingPage"></activity>
+        <activity android:name=".TestingPage" />
+        <activity android:name=".AddNewTopic"></activity>
     </application>
 
 </manifest>

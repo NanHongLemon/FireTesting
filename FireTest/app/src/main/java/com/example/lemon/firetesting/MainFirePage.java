@@ -5,10 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainFirePage extends AppCompatActivity {
 
     private Button startTesting;
+    private TextView AddNewTopic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,17 @@ public class MainFirePage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        AddNewTopic = (TextView) findViewById(R.id.AddNewTopic);
+        AddNewTopic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(MainFirePage.this, AddNewTopic.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }

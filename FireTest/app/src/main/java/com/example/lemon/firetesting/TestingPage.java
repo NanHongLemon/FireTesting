@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import junit.framework.Test;
@@ -159,6 +160,11 @@ public class TestingPage extends AppCompatActivity {
             image.setImageResource(R.drawable.cross);
         }
         MyAlertDialog.setView(image);
+        float imageWidthInPX = (float)image.getWidth();
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(Math.round(imageWidthInPX),
+                Math.round(imageWidthInPX));
+        image.setLayoutParams(layoutParams);
+
         MyAlertDialog.show();
     }
 
