@@ -33,10 +33,6 @@ public class AddNewTopic extends AppCompatActivity {
         AddNewData();
     }
 
-    public void OpenDb() {
-
-    }
-
     public void AddNewData(){
         AddNewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +66,7 @@ public class AddNewTopic extends AppCompatActivity {
                 if (TextAnsCorrect.getText().toString() != "") {
                     Ans.add(TextAnsCorrect.getText().toString());
                 }
-                Log.i("CCCCCCCCCCCC", Ans.toString());
+
                 if (except) {
                     boolean isInserted = myDb.insertData(TextTopic.getText().toString(), Ans.toString());
                     if (isInserted) {
