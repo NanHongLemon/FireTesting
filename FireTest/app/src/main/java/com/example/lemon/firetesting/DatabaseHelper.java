@@ -51,6 +51,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public boolean updateData(int ID, String Topic, String Answers) {
+
+        return true;
+    }
+
     public HashMap getData() {
         HashMap Exam = new HashMap();
         String[] columns = {TOPIC_COLUMN, ANSWERS_COLUMN};

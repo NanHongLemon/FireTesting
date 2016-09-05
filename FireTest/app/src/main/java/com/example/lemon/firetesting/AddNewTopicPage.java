@@ -8,11 +8,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
-public class AddNewTopic extends AppCompatActivity {
+public class AddNewTopicPage extends AppCompatActivity {
     DatabaseHelper myDb;
     private TextView TextTopic, TextAnsA, TextAnsB, TextAnsC, TextAnsD, TextAnsCorrect;
     private Button AddNewBtn;
@@ -39,11 +37,11 @@ public class AddNewTopic extends AppCompatActivity {
             public void onClick(View view) {
                 boolean except = true;
                 if (TextTopic.getText().toString().isEmpty()) {
-                    Toast.makeText(AddNewTopic.this, "題目不能為空", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AddNewTopicPage.this, "題目不能為空", Toast.LENGTH_LONG).show();
                     except = false;
                 }
                 if (TextAnsCorrect.getText().toString().isEmpty()) {
-                    Toast.makeText(AddNewTopic.this, "正確答案不能為空", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AddNewTopicPage.this, "正確答案不能為空", Toast.LENGTH_LONG).show();
                     except = false;
                 }
                 ArrayList Ans = new ArrayList();
@@ -61,19 +59,19 @@ public class AddNewTopic extends AppCompatActivity {
                     Ans.add(TextAnsD.getText().toString());
                 }
                 if (Ans.size() < 1) {
-                    Toast.makeText(AddNewTopic.this, "選擇答案至少要一個", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AddNewTopicPage.this, "選擇答案至少要一個", Toast.LENGTH_LONG).show();
                     except = false;
                 }
-                if (TextAnsCorrect.getText().toString() != "") {
+                if (!TextAnsCorrect.getText().toString().isEmpty()) {
                     Ans.add(TextAnsCorrect.getText().toString());
                 }
 
                 if (except) {
                     boolean isInserted = myDb.insertData(TextTopic.getText().toString(), Ans.toString());
                     if (isInserted) {
-                        Toast.makeText(AddNewTopic.this, "資料新增完成", Toast.LENGTH_LONG).show();
+                        Toast.makeText(AddNewTopicPage.this, "資料新增完成", Toast.LENGTH_LONG).show();
                     } else {
-                        Toast.makeText(AddNewTopic.this, "資料新增失敗", Toast.LENGTH_LONG).show();
+                        Toast.makeText(AddNewTopicPage.this, "資料新增失敗", Toast.LENGTH_LONG).show();
                     }
                 }
             }
