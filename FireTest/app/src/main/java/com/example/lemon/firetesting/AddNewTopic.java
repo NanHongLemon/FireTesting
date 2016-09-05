@@ -38,25 +38,26 @@ public class AddNewTopic extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 boolean except = true;
-                if (TextTopic.getText().toString().equals("") && TextTopic.getText() == null) {
+                if (TextTopic.getText().toString().isEmpty()) {
                     Toast.makeText(AddNewTopic.this, "題目不能為空", Toast.LENGTH_LONG).show();
                     except = false;
                 }
-                if (TextAnsCorrect.getText().toString().equals("") && TextAnsCorrect.getText() == null) {
+                if (TextAnsCorrect.getText().toString().isEmpty()) {
                     Toast.makeText(AddNewTopic.this, "正確答案不能為空", Toast.LENGTH_LONG).show();
                     except = false;
                 }
                 ArrayList Ans = new ArrayList();
-                if (TextAnsA.getText().toString() != "") {
+                if (!TextAnsA.getText().toString().isEmpty()) {
                     Ans.add(TextAnsA.getText().toString());
                 }
-                if (TextAnsB.getText().toString() != "") {
+                Log.i("Text", TextAnsB.getText().toString());
+                if (!TextAnsB.getText().toString().isEmpty()) {
                     Ans.add(TextAnsB.getText().toString());
                 }
-                if (TextAnsC.getText().toString() != "") {
+                if (!TextAnsC.getText().toString().isEmpty()) {
                     Ans.add(TextAnsC.getText().toString());
                 }
-                if (TextAnsD.getText().toString() != "") {
+                if (!TextAnsD.getText().toString().isEmpty()) {
                     Ans.add(TextAnsD.getText().toString());
                 }
                 if (Ans.size() < 1) {

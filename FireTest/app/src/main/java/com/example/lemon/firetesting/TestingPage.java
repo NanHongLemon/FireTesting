@@ -162,7 +162,8 @@ public class TestingPage extends AppCompatActivity {
         String topicKey = topicArray.get(n).toString();
         testTopic.setText(topicKey);
         List<String> Answers = new ArrayList<String>(Arrays.asList(exam.get(topicKey).toString().replaceAll(" ", "").split(",")));
-
+        Log.i("aaa", Answers.toString());
+        Log.i("aaa", Integer.toString(Answers.size()-1));
         for (int i = 0; i < Answers.size()-1; i++) {
             int btnID = getResources().getIdentifier("button"+i, "id", getPackageName());
             Button button = (Button) findViewById(btnID);
