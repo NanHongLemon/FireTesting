@@ -40,11 +40,31 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="開始測驗"
         android:id="@+id/StartTesting"
-        android:textSize="40dp"
+        android:textSize="80dp"
         android:onClick="onClick"
         android:clickable="true"
-        android:textColor="#8ca408"
+        android:textColor="#b4d01c"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="安裝住警器，安全有保庇"
+        android:id="@+id/textView7"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="消防哥哥吳偉民關心您"
+        android:id="@+id/textView8"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

@@ -41,12 +41,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public final class MyData {
-        public int ID;
-        public String Topic;
-        public String Answers;
-    }
-
     public boolean insertData(String Topic, String Answers) {
         Answers = Answers.substring(1, Answers.length()-1);
         SQLiteDatabase db = this.getWritableDatabase();
@@ -62,8 +56,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public boolean updateData(int ID, String Topic, String Answers) {
+        Answers = Answers.substring(1, Answers.length()-1);
+        SQLiteDatabase db = this.getReadableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(TOPIC_COLUMN, Topic);
+        values.put(ANSWERS_COLUMN, Answers);
+        long result = db.update(TABLE_NAME, values, ID_COLUMN + "=" + ID, null);
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
-        return true;
+    public boolean deleteData(int ID) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        long result = db.delete(TABLE_NAME, ID_COLUMN + "=" + ID, null );
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public List<Map<String, Object>> getData() {

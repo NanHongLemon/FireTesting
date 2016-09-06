@@ -62,6 +62,20 @@ public class AddNewTopicPage extends AppCompatActivity {
                     Toast.makeText(AddNewTopicPage.this, "選擇答案至少要一個", Toast.LENGTH_LONG).show();
                     except = false;
                 }
+
+                boolean flag = false;
+                for (int i = 0; i < Ans.size(); i++) {
+                    if (Ans.get(i).equals(TextAnsCorrect.getText().toString())) {
+                        flag = true;
+                        break;
+                    }
+                }
+
+                if (flag == false) {
+                    Toast.makeText(AddNewTopicPage.this, "正確答案與上方答案有所不符", Toast.LENGTH_LONG).show();
+                    except = false;
+                }
+
                 if (!TextAnsCorrect.getText().toString().isEmpty()) {
                     Ans.add(TextAnsCorrect.getText().toString());
                 }

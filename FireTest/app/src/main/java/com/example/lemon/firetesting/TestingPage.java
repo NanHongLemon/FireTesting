@@ -1,5 +1,6 @@
 package com.example.lemon.firetesting;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -103,8 +104,6 @@ public class TestingPage extends AppCompatActivity {
         Button PushButton = (Button) findViewById(id);
         List<String> Answers = new ArrayList<String>(asList(exam.get(n).get("answers").toString().replaceAll(" ","").split(",")));
         String CorrectAns = Answers.get(Answers.size()-1).toString();
-        Log.i("correct", CorrectAns);
-        Log.i("correct", PushButton.getText().toString());
         boolean correct = false;
         if (CorrectAns.equals(PushButton.getText().toString())) {
             correct = true;
@@ -156,8 +155,6 @@ public class TestingPage extends AppCompatActivity {
         TextView testTopic = (TextView) findViewById(R.id.TestTopic);
         testTopic.setText(exam.get(n).get("topic").toString());
         List<String> Answers = new ArrayList<String>(Arrays.asList(exam.get(n).get("answers").toString().replaceAll(" ", "").split(",")));
-        Log.i("aaa", Answers.toString());
-        Log.i("aaa", Integer.toString(Answers.size()-1));
         for (int i = 0; i < Answers.size()-1; i++) {
             int btnID = getResources().getIdentifier("button"+i, "id", getPackageName());
             Button button = (Button) findViewById(btnID);
@@ -179,6 +176,8 @@ public class TestingPage extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(TestingPage.this, MainFirePage.class);
                 startActivity(intent);
+                Activity activity1 = TestingPage.this;
+                activity1.finish();
             }
         };
         EndAlertDialog.setNegativeButton("結束", oKClick);
