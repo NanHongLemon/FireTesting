@@ -4,11 +4,14 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DialogTitle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -33,12 +36,12 @@ public class TestingPage extends AppCompatActivity {
     private TextView NextTopic;
     private int Next = 0;
     DatabaseHelper myDb;
+    MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testing_page);
-
         myDb = new DatabaseHelper(this);
         Exam = myDb.getData();
 
@@ -116,16 +119,18 @@ public class TestingPage extends AppCompatActivity {
         ImageView image = new ImageView(this);
         if(correct) {
             image.setImageResource(R.drawable.cycle);
+            MyAlertDialog.setTitle("恭喜答對了");
+            mp = MediaPlayer.create(this, R.raw.crrect_answer3);
+            mp.start();
         } else {
             image.setImageResource(R.drawable.cross);
+            MyAlertDialog.setTitle("可惜答錯了");
+            mp = MediaPlayer.create(this, R.raw.powerdown07);
+            mp.start();
         }
-        MyAlertDialog.setView(image);
-        float imageWidthInPX = (float)image.getWidth();
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(Math.round(imageWidthInPX),
-                Math.round(imageWidthInPX));
-        image.setLayoutParams(layoutParams);
 
-        MyAlertDialog.show();
+        MyAlertDialog.setView(image);
+        MyAlertDialog.show().getWindow().setLayout(550,500);
     }
 
     public void HideInformation() {
