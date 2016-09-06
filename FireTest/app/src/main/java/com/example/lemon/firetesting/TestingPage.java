@@ -23,19 +23,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import static java.util.Arrays.asList;
 
 public class TestingPage extends AppCompatActivity {
 
     private ArrayList Ans = new ArrayList();
-    private HashMap Exam = new HashMap();
-    private ArrayList TopicArray = new ArrayList();
+    private List<Map<String, Object>> Exam = new ArrayList<Map<String, Object>>();
     private Button button0;
     private Button button1;
     private Button button2;
     private Button button3;
     private TextView NextTopic;
     private int Next = 0;
-    private int MaxSize = 0;
     DatabaseHelper myDb;
 
     @Override
@@ -46,13 +47,8 @@ public class TestingPage extends AppCompatActivity {
         myDb = new DatabaseHelper(this);
         Exam = myDb.getData();
 
-
-        for (Object key : Exam.keySet()) {
-            TopicArray.add(key.toString());
-            MaxSize++;
-        }
         HideInformation();
-        ShowNextData(Exam, TopicArray, 0);
+        ShowNextData(Exam, 0);
 
         button0 = (Button) findViewById(R.id.button0);
         button1 = (Button) findViewById(R.id.button1);
@@ -63,50 +59,49 @@ public class TestingPage extends AppCompatActivity {
         button0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MatchAnswer(Exam, TopicArray, Next, view);
+                MatchAnswer(Exam, Next, view);
             }
         });
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MatchAnswer(Exam, TopicArray, Next, view);
+                MatchAnswer(Exam, Next, view);
             }
         });
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MatchAnswer(Exam, TopicArray, Next, view);
+                MatchAnswer(Exam, Next, view);
             }
         });
 
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MatchAnswer(Exam, TopicArray, Next, view);
+                MatchAnswer(Exam, Next, view);
             }
         });
 
         NextTopic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Next + 1 == MaxSize) {
+                if (Next + 1 == Exam.size()) {
                     ShowEndAlertDialog();
                 } else {
                     Next++;
-                    nextTopic(Exam, TopicArray, Next);
+                    nextTopic(Exam, Next);
                 }
             }
         });
 
     }
 
-    public void MatchAnswer(HashMap exam, ArrayList topicArray, int n, View view) {
+    public void MatchAnswer(List<Map<String, Object>> exam, int n, View view) {
         int id = view.getId();
         Button PushButton = (Button) findViewById(id);
-        String topicKey = topicArray.get(n).toString();
-        List<String> Answers = new ArrayList<String>(Arrays.asList(exam.get(topicKey).toString().replaceAll(" ", "").split(",")));
+        List<String> Answers = new ArrayList<String>(asList(exam.get(n).get("answers").toString().replaceAll(" ","").split(",")));
         String CorrectAns = Answers.get(Answers.size()-1).toString();
         Log.i("correct", CorrectAns);
         Log.i("correct", PushButton.getText().toString());
@@ -157,11 +152,10 @@ public class TestingPage extends AppCompatActivity {
         }
     }
 
-    public void ShowNextData(HashMap exam, ArrayList topicArray, int n) {
+    public void ShowNextData(List<Map<String, Object>> exam, int n) {
         TextView testTopic = (TextView) findViewById(R.id.TestTopic);
-        String topicKey = topicArray.get(n).toString();
-        testTopic.setText(topicKey);
-        List<String> Answers = new ArrayList<String>(Arrays.asList(exam.get(topicKey).toString().replaceAll(" ", "").split(",")));
+        testTopic.setText(exam.get(n).get("topic").toString());
+        List<String> Answers = new ArrayList<String>(Arrays.asList(exam.get(n).get("answers").toString().replaceAll(" ", "").split(",")));
         Log.i("aaa", Answers.toString());
         Log.i("aaa", Integer.toString(Answers.size()-1));
         for (int i = 0; i < Answers.size()-1; i++) {
@@ -172,9 +166,9 @@ public class TestingPage extends AppCompatActivity {
         OpenInformation(Answers.size()-1);
     }
 
-    public void nextTopic(HashMap exam, ArrayList topicArray, int n) {
+    public void nextTopic(List<Map<String, Object>> exam, int n) {
         HideInformation();
-        ShowNextData(exam, topicArray, n);
+        ShowNextData(exam, n);
     }
 
     public void ShowEndAlertDialog() {

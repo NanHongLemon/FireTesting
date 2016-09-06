@@ -9,6 +9,8 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.PriorityQueue;
 
 /**
@@ -19,6 +21,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_NAME = "FireTopic_table";
     public static final String TOPIC_COLUMN = "TOPIC";
     public static final String ANSWERS_COLUMN = "ANSWERS";
+    public static final String ID_COLUMN = "ID";
+    private List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -35,6 +39,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         final String DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME;
         db.execSQL(DROP_TABLE);
         onCreate(db);
+    }
+
+    public final class MyData {
+        public int ID;
+        public String Topic;
+        public String Answers;
     }
 
     public boolean insertData(String Topic, String Answers) {
@@ -56,18 +66,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return true;
     }
 
-    public HashMap getData() {
-        HashMap Exam = new HashMap();
-        String[] columns = {TOPIC_COLUMN, ANSWERS_COLUMN};
+    public List<Map<String, Object>> getData() {
+        List<Map<String, Object>> item = new ArrayList<Map<String, Object>>();
+
+        String[] columns = {ID_COLUMN, TOPIC_COLUMN, ANSWERS_COLUMN};
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_NAME, columns, null, null, null, null, null);
 
         cursor.moveToFirst();
         do {
-            Exam.put(cursor.getString(cursor.getColumnIndexOrThrow(TOPIC_COLUMN)), cursor.getString(cursor.getColumnIndexOrThrow(ANSWERS_COLUMN)));
+            HashMap Exam = new HashMap();
+            Exam.put("id", cursor.getInt(cursor.getColumnIndexOrThrow(ID_COLUMN)));
+            Exam.put("topic", cursor.getString(cursor.getColumnIndexOrThrow(TOPIC_COLUMN)));
+            Exam.put("answers", cursor.getString(cursor.getColumnIndexOrThrow(ANSWERS_COLUMN)));
+            item.add(Exam);
         } while (cursor.moveToNext());
 
-        return Exam;
+        return item;
     }
 
     public void initLocalData(SQLiteDatabase db) {

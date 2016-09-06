@@ -17,10 +17,7 @@
         </activity>
         <activity android:name=".TestingPage" />
         <activity android:name=".AddNewTopicPage" />
-        <activity
-            android:name=".EditTopicPage"
-            android:label="@string/title_activity_edit_topic_page"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".EditTopicPage"></activity>
     </application>
 
 </manifest>
