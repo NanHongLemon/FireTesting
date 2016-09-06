@@ -48,6 +48,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(TOPIC_COLUMN, Topic);
         contentValues.put(ANSWERS_COLUMN, Answers);
         long result = db.insert(TABLE_NAME, null, contentValues);
+        db.close();
         if (result == -1) {
             return false;
         } else {
@@ -62,6 +63,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(TOPIC_COLUMN, Topic);
         values.put(ANSWERS_COLUMN, Answers);
         long result = db.update(TABLE_NAME, values, ID_COLUMN + "=" + ID, null);
+        db.close();
         if (result == -1) {
             return false;
         } else {
@@ -72,6 +74,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean deleteData(int ID) {
         SQLiteDatabase db = this.getReadableDatabase();
         long result = db.delete(TABLE_NAME, ID_COLUMN + "=" + ID, null );
+        db.close();
         if (result == -1) {
             return false;
         } else {
@@ -94,7 +97,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             Exam.put("answers", cursor.getString(cursor.getColumnIndexOrThrow(ANSWERS_COLUMN)));
             item.add(Exam);
         } while (cursor.moveToNext());
-
+        db.close();
         return item;
     }
 

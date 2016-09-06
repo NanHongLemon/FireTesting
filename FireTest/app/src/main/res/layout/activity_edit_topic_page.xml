@@ -42,7 +42,7 @@
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="Small Text"
                     android:id="@+id/EditID"
-                    android:enabled="false" />
+                    android:visibility="gone" />
 
             </LinearLayout>
 

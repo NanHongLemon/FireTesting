@@ -31,24 +31,24 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="activity_edit_topic_page.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_edit_topic_page.xml">
-          <provider selected="true" editor-type-id="android-designer">
+          <provider editor-type-id="android-designer">
             <state />
           </provider>
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.258064">
-              <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.819672">
+              <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_testing_page.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="activity_testing_page.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_testing_page.xml">
-          <provider editor-type-id="android-designer">
+          <provider selected="true" editor-type-id="android-designer">
             <state />
           </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9672132">
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.806452">
               <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
@@ -102,10 +102,10 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/AddNewTopicPage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="17" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="17" />
+              <caret line="91" column="42" selection-start-line="91" selection-start-column="42" selection-end-line="91" selection-end-column="42" />
               <folding>
-                <element signature="e#1225#3754#0" expanded="true" />
-                <element signature="e#3753#3754#0" expanded="true" />
+                <element signature="e#1285#4110#0" expanded="true" />
+                <element signature="e#4109#4110#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -115,13 +115,13 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/DatabaseHelper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="27" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
+              <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#838#859#0" expanded="true" />
                 <element signature="e#907#908#0" expanded="true" />
                 <element signature="e#961#962#0" expanded="true" />
-                <element signature="e#2826#2847#0" expanded="true" />
+                <element signature="e#2886#2907#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -140,20 +140,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestingPage.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestingPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/TestingPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3537803">
-              <caret line="105" column="69" selection-start-line="105" selection-start-column="69" selection-end-line="105" selection-end-column="69" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#932#953#0" expanded="true" />
-                <element signature="e#2596#2918#0" expanded="true" />
-                <element signature="e#2917#2918#0" expanded="true" />
-                <element signature="e#3139#3147#0" expanded="true" />
-                <element signature="e#5309#5317#0" expanded="true" />
-                <element signature="e#6059#6438#0" expanded="true" />
-                <element signature="e#6437#6438#0" expanded="true" />
+                <element signature="e#849#870#0" expanded="true" />
+                <element signature="e#2513#2835#0" expanded="true" />
+                <element signature="e#2834#2835#0" expanded="true" />
+                <element signature="e#3056#3064#0" expanded="true" />
+                <element signature="e#5226#5234#0" expanded="true" />
+                <element signature="e#5976#6355#0" expanded="true" />
+                <element signature="e#6354#6355#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1875,15 +1874,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/AddNewTopic.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/MainFirePage.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_edit_topic_page.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_content.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/EditContent.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/EditTopicPage.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main_fire_page.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/TestingPage.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/DatabaseHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/AddNewTopicPage.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_topic_page.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_testing_page.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_content.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/AddNewTopicPage.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/EditContent.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/DatabaseHelper.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/EditTopicPage.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/TestingPage.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main_fire_page.xml" />
       </list>
     </option>
   </component>
@@ -2412,14 +2411,13 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#932#953#0" expanded="true" />
-            <element signature="e#2596#2918#0" expanded="true" />
-            <element signature="e#2917#2918#0" expanded="true" />
-            <element signature="e#3139#3147#0" expanded="true" />
-            <element signature="e#5309#5317#0" expanded="true" />
-            <element signature="e#6059#6438#0" expanded="true" />
-            <element signature="e#6437#6438#0" expanded="true" />
+            <element signature="e#849#870#0" expanded="true" />
+            <element signature="e#2513#2835#0" expanded="true" />
+            <element signature="e#2834#2835#0" expanded="true" />
+            <element signature="e#3056#3064#0" expanded="true" />
+            <element signature="e#5226#5234#0" expanded="true" />
+            <element signature="e#5976#6355#0" expanded="true" />
+            <element signature="e#6354#6355#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2592,28 +2590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_edit_topic_page.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.258064">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_testing_page.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9672132">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_edit_content.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -2646,31 +2622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/AddNewTopicPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="17" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="17" />
-          <folding>
-            <element signature="e#1225#3754#0" expanded="true" />
-            <element signature="e#3753#3754#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/DatabaseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="27" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#838#859#0" expanded="true" />
-            <element signature="e#907#908#0" expanded="true" />
-            <element signature="e#961#962#0" expanded="true" />
-            <element signature="e#2826#2847#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/EditContent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2680,6 +2631,58 @@
             <element signature="e#5031#5032#0" expanded="true" />
             <element signature="e#5073#5438#0" expanded="true" />
             <element signature="e#5437#5438#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_fire_page.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.548388">
+          <caret line="41" column="37" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/TestingPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+          <folding>
+            <element signature="e#849#870#0" expanded="true" />
+            <element signature="e#2513#2835#0" expanded="true" />
+            <element signature="e#2834#2835#0" expanded="true" />
+            <element signature="e#3056#3064#0" expanded="true" />
+            <element signature="e#5226#5234#0" expanded="true" />
+            <element signature="e#5976#6355#0" expanded="true" />
+            <element signature="e#6354#6355#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/AddNewTopicPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="91" column="42" selection-start-line="91" selection-start-column="42" selection-end-line="91" selection-end-column="42" />
+          <folding>
+            <element signature="e#1285#4110#0" expanded="true" />
+            <element signature="e#4109#4110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/DatabaseHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#838#859#0" expanded="true" />
+            <element signature="e#907#908#0" expanded="true" />
+            <element signature="e#961#962#0" expanded="true" />
+            <element signature="e#2886#2907#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2712,31 +2715,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_fire_page.xml">
-      <provider selected="true" editor-type-id="android-designer">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_edit_topic_page.xml">
+      <provider editor-type-id="android-designer">
         <state />
       </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.548388">
-          <caret line="41" column="37" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.819672">
+          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemon/firetesting/TestingPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3537803">
-          <caret line="105" column="69" selection-start-line="105" selection-start-column="69" selection-end-line="105" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#932#953#0" expanded="true" />
-            <element signature="e#2596#2918#0" expanded="true" />
-            <element signature="e#2917#2918#0" expanded="true" />
-            <element signature="e#3139#3147#0" expanded="true" />
-            <element signature="e#5309#5317#0" expanded="true" />
-            <element signature="e#6059#6438#0" expanded="true" />
-            <element signature="e#6437#6438#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_testing_page.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.806452">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

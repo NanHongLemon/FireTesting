@@ -1,5 +1,7 @@
 package com.example.lemon.firetesting;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -83,6 +85,11 @@ public class AddNewTopicPage extends AppCompatActivity {
                 if (except) {
                     boolean isInserted = myDb.insertData(TextTopic.getText().toString(), Ans.toString());
                     if (isInserted) {
+                        Intent intent = new Intent();
+                        intent.setClass(AddNewTopicPage.this, AddNewTopicPage.class);
+                        startActivity(intent);
+                        Activity activity = AddNewTopicPage.this;
+                        activity.finish();
                         Toast.makeText(AddNewTopicPage.this, "資料新增完成", Toast.LENGTH_LONG).show();
                     } else {
                         Toast.makeText(AddNewTopicPage.this, "資料新增失敗", Toast.LENGTH_LONG).show();

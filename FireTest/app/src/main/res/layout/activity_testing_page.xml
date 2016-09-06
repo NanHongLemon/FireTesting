@@ -52,7 +52,7 @@
                     android:layout_height="match_parent"
                     android:text="New Button"
                     android:id="@+id/button0"
-                    android:textSize="18dp" />
+                    android:textSize="20dp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -76,7 +76,7 @@
                     android:layout_height="match_parent"
                     android:text="New Button"
                     android:id="@+id/button1"
-                    android:textSize="18dp" />
+                    android:textSize="20dp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -100,7 +100,7 @@
                     android:layout_height="match_parent"
                     android:text="New Button"
                     android:id="@+id/button2"
-                    android:textSize="18dp" />
+                    android:textSize="20dp" />
             </LinearLayout>
 
         </LinearLayout>
@@ -125,7 +125,7 @@
                     android:layout_height="match_parent"
                     android:text="New Button"
                     android:id="@+id/button3"
-                    android:textSize="18dp" />
+                    android:textSize="20dp" />
             </LinearLayout>
 
         </LinearLayout>
