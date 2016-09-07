@@ -3,22 +3,24 @@ package com.example.lemon.firetesting;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class MainFirePage extends AppCompatActivity {
 
-    private TextView startTesting;
     private TextView AddNewTopic;
     private TextView EditTopic;
+    private RelativeLayout touchTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_fire_page);
 
-        startTesting = (TextView) findViewById(R.id.StartTesting);
-        startTesting.setOnClickListener(new View.OnClickListener() {
+        touchTest = (RelativeLayout) findViewById(R.id.touchTest);
+        touchTest.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();

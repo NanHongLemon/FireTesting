@@ -8,7 +8,10 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.lemon.firetesting.MainFirePage"
-    android:background="@drawable/question">
+    android:background="@drawable/question"
+    android:id="@+id/touchTest"
+    android:onClick="onClick"
+    android:clickable="true">
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,19 +36,6 @@
         android:layout_alignParentEnd="true"
         android:onClick="onClick"
         android:clickable="true"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="開始測驗"
-        android:id="@+id/StartTesting"
-        android:textSize="80dp"
-        android:onClick="onClick"
-        android:clickable="true"
-        android:textColor="#b4d01c"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"

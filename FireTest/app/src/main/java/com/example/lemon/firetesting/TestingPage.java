@@ -27,7 +27,6 @@ import static java.util.Arrays.asList;
 
 public class TestingPage extends AppCompatActivity {
 
-    private ArrayList Ans = new ArrayList();
     private List<Map<String, Object>> Exam = new ArrayList<Map<String, Object>>();
     private Button button0;
     private Button button1;
@@ -54,33 +53,33 @@ public class TestingPage extends AppCompatActivity {
         button3 = (Button) findViewById(R.id.button3);
         NextTopic = (TextView) findViewById(R.id.NextTopic);
 
-        button0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MatchAnswer(Exam, Next, view);
-            }
-        });
+            button0.setOnClickListener( new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    MatchAnswer( Exam, Next, view );
+                }
+            } );
 
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MatchAnswer(Exam, Next, view);
-            }
-        });
+            button1.setOnClickListener( new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    MatchAnswer( Exam, Next, view );
+                }
+            } );
 
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MatchAnswer(Exam, Next, view);
-            }
-        });
+            button2.setOnClickListener( new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    MatchAnswer( Exam, Next, view );
+                }
+            } );
 
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MatchAnswer(Exam, Next, view);
-            }
-        });
+            button3.setOnClickListener( new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    MatchAnswer( Exam, Next, view );
+                }
+            } );
 
         NextTopic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,30 +105,38 @@ public class TestingPage extends AppCompatActivity {
             correct = true;
         }
         for (int i = 0; i < Answers.size()-1; i++) {
-            int btnID = getResources().getIdentifier("button"+i, "id", getPackageName());
-            Button button = (Button) findViewById(btnID);
-            if (Answers.get(i).equals(CorrectAns)) {
-                button.setTextColor(Color.GREEN);
+            int btnID = getResources().getIdentifier( "button" + i, "id", getPackageName() );
+            Button button = (Button) findViewById( btnID );
+            if (Answers.get( i ).equals( CorrectAns )) {
+                button.setTextColor( Color.BLUE );
+                button.setEnabled( false );
             } else {
-                button.setTextColor(Color.RED);
+                button.setTextColor( Color.RED );
+                button.setEnabled( false );
             }
         }
-
         AlertDialog.Builder MyAlertDialog = new AlertDialog.Builder(this);
         ImageView image = new ImageView(this);
+        TextView myMsg = new TextView(this);
+        myMsg.setTextSize(24);
+        myMsg.setPadding(0,20,0,20);
         if(correct) {
             image.setImageResource(R.drawable.cycle);
-            MyAlertDialog.setTitle("恭喜答對了");
+            myMsg.setText("恭喜答對了");
             mp = MediaPlayer.create(this, R.raw.crrect_answer3);
             mp.start();
         } else {
-            image.setImageResource(R.drawable.cross);
-            MyAlertDialog.setTitle("可惜答錯了");
-            mp = MediaPlayer.create(this, R.raw.powerdown07);
+            image.setImageResource( R.drawable.cross );
+            myMsg.setText("可惜答錯了");
+            mp = MediaPlayer.create( this, R.raw.powerdown07 );
             mp.start();
         }
-
-        MyAlertDialog.setView(image);
+        LinearLayout layout = new LinearLayout(this);
+        layout.setOrientation(LinearLayout.VERTICAL);
+        myMsg.setGravity(Gravity.CENTER);
+        layout.addView(myMsg);
+        layout.addView(image);
+        MyAlertDialog.setView(layout);
         MyAlertDialog.show().getWindow().setLayout(550,500);
     }
 
@@ -147,6 +154,7 @@ public class TestingPage extends AppCompatActivity {
             int btnID = getResources().getIdentifier("button"+i, "id", getPackageName());
             Button button = (Button) findViewById(btnID);
             button.setVisibility(View.VISIBLE);
+            button.setEnabled(true);
         }
     }
 
