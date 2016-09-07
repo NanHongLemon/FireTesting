@@ -38,19 +38,21 @@ public class AddNewTopicPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 boolean except = true;
+                boolean CorrectAns = true;
                 if (TextTopic.getText().toString().isEmpty()) {
-                    Toast.makeText(AddNewTopicPage.this, "題目不能為空", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AddNewTopicPage.this, "題目不能為空", Toast.LENGTH_SHORT).show();
                     except = false;
+                    CorrectAns =false;
                 }
                 if (TextAnsCorrect.getText().toString().isEmpty()) {
-                    Toast.makeText(AddNewTopicPage.this, "正確答案不能為空", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AddNewTopicPage.this, "正確答案不能為空", Toast.LENGTH_SHORT).show();
                     except = false;
+                    CorrectAns =false;
                 }
                 ArrayList Ans = new ArrayList();
                 if (!TextAnsA.getText().toString().isEmpty()) {
                     Ans.add(TextAnsA.getText().toString());
                 }
-                Log.i("Text", TextAnsB.getText().toString());
                 if (!TextAnsB.getText().toString().isEmpty()) {
                     Ans.add(TextAnsB.getText().toString());
                 }
@@ -61,23 +63,24 @@ public class AddNewTopicPage extends AppCompatActivity {
                     Ans.add(TextAnsD.getText().toString());
                 }
                 if (Ans.size() < 1) {
-                    Toast.makeText(AddNewTopicPage.this, "選擇答案至少要一個", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AddNewTopicPage.this, "選擇答案至少要一個", Toast.LENGTH_SHORT).show();
                     except = false;
+                    CorrectAns =false;
                 }
 
-                boolean flag = false;
-                for (int i = 0; i < Ans.size(); i++) {
-                    if (Ans.get(i).equals(TextAnsCorrect.getText().toString())) {
-                        flag = true;
-                        break;
+                if (CorrectAns) {
+                    boolean flag = false;
+                    for (int i = 0; i < Ans.size(); i++) {
+                        if (Ans.get( i ).equals( TextAnsCorrect.getText().toString() )) {
+                            flag = true;
+                            break;
+                        }
+                    }
+                    if (flag == false) {
+                        Toast.makeText( AddNewTopicPage.this, "正確答案與上方答案有所不符", Toast.LENGTH_SHORT ).show();
+                        except = false;
                     }
                 }
-
-                if (flag == false) {
-                    Toast.makeText(AddNewTopicPage.this, "正確答案與上方答案有所不符", Toast.LENGTH_LONG).show();
-                    except = false;
-                }
-
                 if (!TextAnsCorrect.getText().toString().isEmpty()) {
                     Ans.add(TextAnsCorrect.getText().toString());
                 }
@@ -90,9 +93,9 @@ public class AddNewTopicPage extends AppCompatActivity {
                         startActivity(intent);
                         Activity activity = AddNewTopicPage.this;
                         activity.finish();
-                        Toast.makeText(AddNewTopicPage.this, "資料新增完成", Toast.LENGTH_LONG).show();
+                        Toast.makeText(AddNewTopicPage.this, "資料新增完成", Toast.LENGTH_SHORT).show();
                     } else {
-                        Toast.makeText(AddNewTopicPage.this, "資料新增失敗", Toast.LENGTH_LONG).show();
+                        Toast.makeText(AddNewTopicPage.this, "資料新增失敗", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
